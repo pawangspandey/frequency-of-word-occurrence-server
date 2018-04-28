@@ -28,11 +28,15 @@ const getMostUsedWords = (text, numberOfWords) => {
   _.each(lines, (line) => {
     line = line.trim();
 
+    // split line by space or blank
     const wordArray = line.split(/(?:\s)|^$/);
     _.each(wordArray, (word) => {
       // removing any beginning and end not characters.
       word = word.replace(/^\W*(.*?)\W*$/, '$1', word);
-      wordsWithCount[word] = ( wordsWithCount[word] || 0) + 1;
+      // skip any blank word
+      if (!/^$/.test(word)){
+        wordsWithCount[word.toLowerCase()] = ( wordsWithCount[word.toLowerCase()] || 0) + 1;
+      }
     });
 
   });
@@ -51,7 +55,7 @@ const getMostUsedWords = (text, numberOfWords) => {
       return obj;
     });
     _.each(words, (word) => topMostUsedWords.push(word));
-  })
+  });
 
   return topMostUsedWords.splice(0, numberOfWords);
 
