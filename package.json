@@ -1,5 +1,5 @@
 {
-  "name": "textSerarchApi",
+  "name": "frequency-of-word-occurrence-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
