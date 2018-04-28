@@ -13,7 +13,7 @@ app.get('/' , (req, res) => {
 
   request.get('http://terriblytinytales.com/test.txt')
   .then((result) => {
-    res.status(200).send(util.getMostUsedWords(result, req.query.words || 5));
+    res.status(200).send(util.getMostUsedWords(result, parseInt(req.query.words) || 5));
   })
   .catch((error) => {
     // will use better way to log the error.
