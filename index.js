@@ -5,6 +5,7 @@ const readline = require('readline');
 const util = require('./util');
 
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 
 
@@ -20,6 +21,6 @@ app.get('/' , (req, res) => {
   })
 });
 
-app.listen(process.env.PORT || '80', () => {
-  console.log('app listing on port 80');
+app.listen(PORT, () => {
+  console.log(`app listing on port ${PORT}`);
 });
