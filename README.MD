@@ -43,3 +43,7 @@ util.getMostUsedWords(text, numberOfWords);
 }];
 ```
 
+### Test
+```sh
+npm test
+```
