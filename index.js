@@ -15,7 +15,7 @@ app.get('/' , (req, res) => {
   .then((result) => {
     res.setHeader('Content-Type', 'application/json');
     // res.status(200).send(util.getMostUsedWords(result, parseInt(req.query.words) || 5));
-    res.jsonp(util.getMostUsedWords(result, parseInt(req.query.words) || 5));
+    res.jsonp(util.getMostUsedWords(result, parseInt(req.query.words) || 0));
   })
   .catch((error) => {
     // will use better way to log the error.
